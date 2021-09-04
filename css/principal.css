@@ -1,0 +1,261 @@
+/* Estilo general */
+* {
+    margin: 0;
+    padding: 0;    
+}
+
+/* Estilo Body adicional al estilo general */
+body {
+    background: #ffffff;
+    color: #000000;
+    font-family: 'Tahoma';
+}
+
+/* Estilo Contenedor y CSS Grid */
+.contenedor {
+    display: grid;
+    grid-gap: 10px ;
+
+    grid-template-areas: "menu menu menu"
+                         "header header header"
+                         "tarjeta1 tarjeta2 tarjeta3"
+                         "tarjeta4 tarjeta5 tarjeta6"
+                         "tarjeta7 tarjeta8 tarjeta9"
+                         "footer footer footer";
+}
+
+/* Estilo contenedor y clases */
+.contenedor .header{
+    grid-area: header;
+    font-family: 'Arial Rounded MT';
+    height: 80px;
+    font-size: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo menu */
+.contenedor .menu {
+    background: #333333;
+    color: #FFFFFF;
+    grid-area: menu;
+    height: 45px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #f1f1f1;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: dimgrey;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li p {
+    display: block;
+    color: dimgrey;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: dodgerblue;
+}
+
+li a:hover {
+    text-decoration: underline;
+    color: dodgerblue;
+}
+
+/* Estilo tarjetas para imágenes */
+.contenedor .tarjeta1,
+.contenedor .tarjeta2,
+.contenedor .tarjeta3,
+.contenedor .tarjeta4,
+.contenedor .tarjeta5,
+.contenedor .tarjeta6,
+.contenedor .tarjeta7,
+.contenedor .tarjeta8,
+.contenedor .tarjeta9 {
+    height: auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tarjeta1 {
+    grid-area: tarjeta1; 
+}
+.contenedor .tarjeta2{
+    grid-area: tarjeta2;
+}
+
+.contenedor .tarjeta3 {
+    grid-area: tarjeta3;
+}
+
+.contenedor .tarjeta4{
+    grid-area: tarjeta4;
+}
+
+.contenedor .tarjeta5{
+    grid-area: tarjeta5;
+}
+
+.contenedor .tarjeta6{
+    grid-area: tarjeta6;
+}
+
+.contenedor .tarjeta7{
+    grid-area: tarjeta7;
+}
+
+.contenedor .tarjeta8{
+    grid-area: tarjeta8;
+}
+
+.contenedor .tarjeta9{
+    grid-area: tarjeta9;
+}
+
+.contenedor .tarjeta1:hover,
+.contenedor .tarjeta2:hover,
+.contenedor .tarjeta3:hover, 
+.contenedor .tarjeta4:hover,
+.contenedor .tarjeta5:hover, 
+.contenedor .tarjeta6:hover,
+.contenedor .tarjeta7:hover,
+.contenedor .tarjeta8:hover,
+.contenedor .tarjeta9:hover {    
+    transition: .5s ease;
+}
+
+.contenedor .tarjeta1 .caja a,
+.contenedor .tarjeta2 .caja a,
+.contenedor .tarjeta3 .caja a,
+.contenedor .tarjeta4 .caja a,
+.contenedor .tarjeta5 .caja a,
+.contenedor .tarjeta6 .caja a,
+.contenedor .tarjeta7 .caja a,
+.contenedor .tarjeta8 .caja a,
+.contenedor .tarjeta9 .caja a {
+    font-size: 30px;
+}
+
+/* Estilo clase caja para imagen responsiva */
+.caja{
+    width:fit-content;
+    height:fit-content;
+    padding-left: 15px;
+}
+
+.caja img{
+    width: 100%;
+    height: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);    
+    border-radius: 7px ;    
+}
+
+  /* Estilo para imagen en hoover */
+  .img__wrap {
+    position: relative;
+  }
+  
+  .img__description {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(29, 106, 154, 0.72);
+    visibility: hidden;
+    border-radius: 7px;
+  
+    transition: opacity .2s, visibility .2s;
+  }
+  
+  .img__wrap:hover .img__description {
+    visibility: visible;
+    opacity: 1;
+    color: #ffffff;
+  }
+
+  /* Estilo Footer */
+.contenedor .footer {
+    background: #D3D3D3;
+    color: dimgray;
+    grid-area: footer;
+    height: 150px;
+    text-align: center;
+}
+
+  /* Estilo para Formulario */
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  input[type=submit] {
+    background-color: dodgerblue;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    
+  }
+  
+  input[type=submit]:hover {
+    opacity: 0.8;
+  }
+
+
+/* Media query para imagen responsiva */
+@supports(object-fit: cover){
+    .box img{
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+}
+
+/* Media query para página Web responsiva */
+@media screen and (max-width: 768px){
+    .contenedor {
+        grid-template-areas: 
+                            "menu menu menu"
+                            "header header header"
+                            "tarjeta1 tarjeta1 tarjeta1"
+                            "tarjeta2 tarjeta2 tarjeta2"
+                            "tarjeta3 tarjeta3 tarjeta3"
+                            "tarjeta4 tarjeta4 tarjeta4"
+                            "tarjeta5 tarjeta5 tarjeta5"
+                            "tarjeta6 tarjeta6 tarjeta6"
+                            "tarjeta7 tarjeta7 tarjeta7"
+                            "tarjeta8 tarjeta8 tarjeta8"
+                            "tarjeta9 tarjeta9 tarjeta9"
+                            "footer footer footer";
+    }
+}
+
+
+
+
